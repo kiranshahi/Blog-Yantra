@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Blog_Yantra
 {
   [Route("api/[Controller]")]
