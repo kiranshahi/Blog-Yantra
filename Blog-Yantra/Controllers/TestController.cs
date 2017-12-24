@@ -1,0 +1,12 @@
+namespace Blog_Yantra
+{
+  [Route("api/[Controller]")]
+  public class TestController: Controller
+  {
+    [HttpGet]
+    public IActionResult Greetings()
+    {
+      return Ok("Hello from ASP.NET Core Web API.");
+    }
+  }
+}
