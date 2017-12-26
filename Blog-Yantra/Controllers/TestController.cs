@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Blog_Yantra
+namespace Blog_Yantra.Controllers
 {
   [Route("api/[Controller]")]
   public class TestController: Controller
