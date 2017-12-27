@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog_Yantra.Controllers
 {
-  [Route("api/[Controller]")]
+  [Route("api/[controller]")]
   public class TodoController : Controller
   {
     private readonly TodoContext _context;
@@ -48,7 +48,7 @@ namespace Blog_Yantra.Controllers
       }
       _context.TodoItems.Add(item);
       _context.SaveChanges();
-      return CreatedAtAction("GetTodo", new { id = item.Id }, item);
+      return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
     }
 
     // Update
