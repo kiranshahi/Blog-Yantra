@@ -17,7 +17,7 @@ namespace Blog_Yantra
       services.AddMvc();
 
       // Register the Swagger generator, defining one or more Swagger or more Swagger documents
-      services.AddSwaggerGen(C =>
+      services.AddSwaggerGen(c =>
       {
         c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
       });
