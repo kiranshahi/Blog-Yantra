@@ -19,7 +19,15 @@ namespace Blog_Yantra
       // Register the Swagger generator, defining one or more Swagger or more Swagger documents
       services.AddSwaggerGen(c =>
       {
-        c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+        c.SwaggerDoc("v1", new Info 
+        { 
+          Version = "v1",
+          Title = "My Blog API",
+          Description ="A simple blog developed using ASP.NET Core Web API and Angular",
+          TermsOfService = "None",
+          Contact = new Contact { Name = "kiran Shahi", Email = "contact@example.com", Url = "http://kirans.com.np" },
+          License = new License { Name = "GNU Lesser General Public License v3.0", Url = "https://www.gnu.org/licenses/lgpl-3.0.en.html" }
+        });
       });
     }
 
@@ -33,7 +41,7 @@ namespace Blog_Yantra
       // Enable middleware to server swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
       app.UseSwaggerUI(c => 
       {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Blog API V1");
       });
 
       app.UseDefaultFiles();
