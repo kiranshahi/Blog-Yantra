@@ -13,7 +13,7 @@ namespace Blog_Yantra
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoList"));
+      services.AddDbContext<BlogContext>(opt => opt.UseInMemoryDatabase("Blog"));
       services.AddMvc();
 
       // Register the Swagger generator, defining one or more Swagger or more Swagger documents
