@@ -10,7 +10,7 @@ namespace Blog_Yantra.Models
         public string Email { get; set; }
         public string Url { get; set; }
         public DateTime RegisteredOn { get; set; }
-        public bool Status { get; set; }
+        public int Status { get; set; }
         public string DisplayName { get; set; }
     }
 }
