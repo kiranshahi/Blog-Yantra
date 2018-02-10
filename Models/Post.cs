@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Blog_Yantra.Models
 {
@@ -10,5 +11,7 @@ namespace Blog_Yantra.Models
         public string Summary { get; set; }
         public DateTime Date { get; set; }
         public int status { get; set; }
+        [Column("UserId")]
+        public User User { get; set; }
     }
 }
