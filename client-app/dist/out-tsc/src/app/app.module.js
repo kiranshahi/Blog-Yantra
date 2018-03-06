@@ -14,13 +14,15 @@ var app_service_1 = require("./app.service");
 var dropdown_1 = require("ngx-bootstrap/dropdown");
 var tooltip_1 = require("ngx-bootstrap/tooltip");
 var modal_1 = require("ngx-bootstrap/modal");
+var post_component_1 = require("./post/post.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                post_component_1.PostComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,

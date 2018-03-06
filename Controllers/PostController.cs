@@ -12,11 +12,6 @@ namespace Blog_Yantra.Controllers
         public PostController(BlogContext context)
         {
             _context = context;
-            if (_context.Posts.Count() == 0)
-            {
-                _context.Posts.Add(new Post { });
-                _context.SaveChanges();
-            }
         }
 
         [HttpGet]
@@ -25,7 +20,7 @@ namespace Blog_Yantra.Controllers
             return _context.Posts.ToList();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetPost")]
         public IActionResult GetById(long id)
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);
