@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import { AppService } from './app.service';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-root',
