@@ -10,28 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var app_service_1 = require("../services/app.service");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(_appService) {
-        this._appService = _appService;
-        this.greetings = '';
+var CreatepostComponent = /** @class */ (function () {
+    function CreatepostComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._appService.getData()
-            .subscribe(function (result) {
-            _this.greetings = result;
-        });
+    CreatepostComponent.prototype.ngOnInit = function () {
     };
-    AppComponent = __decorate([
+    CreatepostComponent = __decorate([
         core_1.Component({
-            selector: 'app-root',
-            templateUrl: './app.component.html',
-            styleUrls: ['./app.component.css']
+            selector: 'app-createpost',
+            templateUrl: './createpost.component.html',
+            styleUrls: ['./createpost.component.css']
         }),
-        __metadata("design:paramtypes", [app_service_1.AppService])
-    ], AppComponent);
-    return AppComponent;
+        __metadata("design:paramtypes", [])
+    ], CreatepostComponent);
+    return CreatepostComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CreatepostComponent = CreatepostComponent;
+//# sourceMappingURL=createpost.component.js.map

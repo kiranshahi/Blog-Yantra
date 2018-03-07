@@ -9,12 +9,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var app_component_1 = require("./app.component");
-var app_service_1 = require("./app.service");
+var router_1 = require("@angular/router");
+var app_service_1 = require("./services/app.service");
 var dropdown_1 = require("ngx-bootstrap/dropdown");
 var tooltip_1 = require("ngx-bootstrap/tooltip");
 var modal_1 = require("ngx-bootstrap/modal");
-var post_component_1 = require("./post/post.component");
+var app_component_1 = require("./components/app/app.component");
+var post_component_1 = require("./components/post/post.component");
+var home_component_1 = require("./components/home/home.component");
+var createpost_component_1 = require("./components/createpost/createpost.component");
+var appRoutes = [
+    {
+        path: '',
+        component: home_component_1.HomeComponent
+    },
+    {
+        path: 'home',
+        component: home_component_1.HomeComponent
+    },
+    {
+        path: 'post/create',
+        component: createpost_component_1.CreatepostComponent
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
+    }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,14 +43,17 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                post_component_1.PostComponent
+                post_component_1.PostComponent,
+                createpost_component_1.CreatepostComponent,
+                home_component_1.HomeComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpModule,
                 dropdown_1.BsDropdownModule.forRoot(),
                 tooltip_1.TooltipModule.forRoot(),
-                modal_1.ModalModule.forRoot()
+                modal_1.ModalModule.forRoot(),
+                router_1.RouterModule.forRoot(appRoutes)
             ],
             providers: [app_service_1.AppService],
             bootstrap: [app_component_1.AppComponent]
