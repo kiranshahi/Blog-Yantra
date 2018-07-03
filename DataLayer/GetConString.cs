@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
+using Microsoft.Extensions.Configuration;
 
 namespace DataLayer
 {
     public class GetConString
     {
+        public static IConfiguration Configuration { get; set; }
         public static string ApplicationExeDirectory()
         {
             var location = Assembly.GetExecutingAssembly().Location;
@@ -15,13 +15,14 @@ namespace DataLayer
             return appRoot;
         }
 
-        public static IConfigurationRoot GetAppSettings()
+        public static string GetConnectionString(string key)
         {
             string applicationExeDirectory = ApplicationExeDirectory();
             var builder = new ConfigurationBuilder()
                 .SetBasePath(applicationExeDirectory)
                 .AddJsonFile("connection.json");
-            return builder.Build();
+            Configuration = builder.Build();
+            return Configuration[key];
         }
     }
 }
