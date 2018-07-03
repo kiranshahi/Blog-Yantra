@@ -7,7 +7,7 @@ namespace DataLayer
     {
         public static SqlConnection Connection()
         {
-            SqlConnection con = new SqlConnection();
+            SqlConnection con = new SqlConnection(GetConString.GetConnectionString("DefaultConnection"));
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
